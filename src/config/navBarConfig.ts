@@ -82,19 +82,8 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 		],
 	});
 
-	// 关于及其子菜单
-	links.push({
-		name: "关于",
-		url: "#",
-		icon: "material-symbols:info",
-		children: [
-			// 打赏
-			LinkPresets.Sponsor,
-
-			// 关于页面
-			LinkPresets.About,
-		],
-	});
+	// 关于（直接指向自我介绍页面，无下拉列表）
+	links.push(LinkPresets.About);
 
 	// 自定义导航栏链接
 	links.push({
@@ -230,14 +219,8 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		icon: "material-symbols:menu-book",
 		pageKey: "mal",
 	},
-	Sponsor: {
-		name: "打赏",
-		url: "/sponsor/",
-		icon: "material-symbols:favorite",
-		pageKey: "sponsor",
-	},
 	About: {
-		name: "关于我",
+		name: "关于",
 		url: "/about/",
 		icon: "material-symbols:person",
 	},
